@@ -11,14 +11,13 @@ public class OnMouseDown_plus_w : MonoBehaviour
 
     //Judgeがアタッチされたオブジェクトを指定
     GameObject judger;
-    //public string Judger = "next";
 
     
     // Start is called before the first frame update
     void Start()
     {
        judger = GameObject.Find("Judger");
-        Debug.Log(judger);
+       //Debug.Log(judger);
     }
 
     // Update is called once per frame
@@ -40,7 +39,7 @@ public class OnMouseDown_plus_w : MonoBehaviour
         {
             judger.GetComponent<Judge>().Mw1();
             ++m;
-            Debug.Log(m);
+            //Debug.Log(m);
         }
 
         this.gameObject.SetActive(false);
