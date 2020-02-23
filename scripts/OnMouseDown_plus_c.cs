@@ -18,7 +18,7 @@ public class OnMouseDown_plus_c : MonoBehaviour
     void Start()
     {
        judger = GameObject.Find("Judger");
-       //Debug.Log(judger);
+        Debug.Log(judger);
     }
 
     // Update is called once per frame
@@ -33,14 +33,14 @@ public class OnMouseDown_plus_c : MonoBehaviour
         {
             judger.GetComponent<Judge>().Pc1();
             --p;
-            //Debug.Log(p);
+            Debug.Log(p);
         }
 
         while (m != 0)
         {
             judger.GetComponent<Judge>().Mc1();
             ++m;
-            //Debug.Log(m);
+            Debug.Log(m);
         }
 
         this.gameObject.SetActive(false);
