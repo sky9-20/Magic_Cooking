@@ -59,27 +59,16 @@ public class Judge : MonoBehaviour
     public void Pc1()
     {
         which_cake += 1;
-        Debug.Log(which_cake);
-    }
-
-    public void Mc1()
-    {
-        which_cake -= 1;
-        Debug.Log(which_cake);
+        Debug.Log("which_cake: " + which_cake);
     }
 
     public void Pw1()
     {
         whichi_decoration += 1;
-        Debug.Log(whichi_decoration);
+        Debug.Log("whichi_decoration: " + whichi_decoration);
     }
 
-    public void Mw1()
-    {
-        whichi_decoration -= 1;
-        Debug.Log(whichi_decoration);
-    }
-
+    
     void OnMouseDown()
     {
         if(which_cake == 7)

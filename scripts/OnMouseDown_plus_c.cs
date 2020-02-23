@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class OnMouseDown_plus_c : MonoBehaviour
 {
-    //足す・引く値をインスペクター上で指定
+    //足す値をインスペクター上で指定
     public int plus = 1;
-    public int minus = 0;
 
     //Judgeがアタッチされたオブジェクトを指定
     GameObject judger;
@@ -24,21 +23,14 @@ public class OnMouseDown_plus_c : MonoBehaviour
     {
         //ループ用の変数を定義
         int p = plus;
-        int m = minus;
 
-        //+,-値が0になるまでJudgeで足す、引く
+        //+値が0になるまでJudgeで足す
         while (p != 0)
         {
             judger.GetComponent<Judge>().Pc1();
             --p;
         }
-
-        while (m != 0)
-        {
-            judger.GetComponent<Judge>().Mc1();
-            ++m;
-        }
-
+        
         this.gameObject.SetActive(false);
     }
 }
