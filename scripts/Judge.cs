@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Judge : MonoBehaviour
 {
-    public int SorF = 0;
-    public int CorP = 0;
+    public int which_cake = 0;
+    public int whichi_decoration = 0;
 
-    public string cakeA;
-    public string cakeB;
-    public string cakeF;
+    public string cakeA_freshcream;
+    public string cakeB_chocolate;
+    public string cakeZ;
 
-    public string whipA;
-    public string whipB;
+    public string decorationA_banana;
+    public string decorationB_strawberry;
 
     public string Perfect;
     public string Clear;
     public string Bad;
 
-    GameObject cA;
-    GameObject cB;
-    GameObject cF;
-    GameObject wA;
-    GameObject wB;
+    GameObject cake_freshcream;
+    GameObject cake_chocolate;
+    GameObject cake_failed;
+    GameObject banana;
+    GameObject strawberry;
 
     GameObject P;
     GameObject C;
@@ -30,20 +30,20 @@ public class Judge : MonoBehaviour
 
     void Start()
     { // パーツを取得して非表示
-        cA = GameObject.Find(cakeA);
-        cA.SetActive(false);
+        cake_freshcream = GameObject.Find(cakeA_freshcream);
+        cake_freshcream.SetActive(false);
 
-        cB = GameObject.Find(cakeB);
-        cB.SetActive(false);
+        cake_chocolate = GameObject.Find(cakeB_chocolate);
+        cake_chocolate.SetActive(false);
 
-        cF = GameObject.Find(cakeF);
-        cF.SetActive(false);
+        cake_failed = GameObject.Find(cakeZ);
+        cake_failed.SetActive(false);
 
-        wA = GameObject.Find(whipA);
-        wA.SetActive(false);
+        banana = GameObject.Find(decorationA_banana);
+        banana.SetActive(false);
 
-        wB = GameObject.Find(whipB);
-        wB.SetActive(false);
+        strawberry = GameObject.Find(decorationB_strawberry);
+        strawberry.SetActive(false);
 
         P = GameObject.Find(Perfect);
         P.SetActive(false);
@@ -57,59 +57,59 @@ public class Judge : MonoBehaviour
  
     //ボタン側で呼び出される、判定値を変更
     public void Pc1()
-    {//+1
-        SorF += 1;
-        Debug.Log(SorF);
+    {
+        which_cake += 1;
+        Debug.Log(which_cake);
     }
 
     public void Mc1()
     {
-        SorF -= 1;
-        Debug.Log(SorF);
+        which_cake -= 1;
+        Debug.Log(which_cake);
     }
 
     public void Pw1()
-    {//+1
-        CorP += 1;
-        Debug.Log(CorP);
+    {
+        whichi_decoration += 1;
+        Debug.Log(whichi_decoration);
     }
 
     public void Mw1()
-    {//-1
-        CorP -= 1;
-        Debug.Log(CorP);
+    {
+        whichi_decoration -= 1;
+        Debug.Log(whichi_decoration);
     }
 
     void OnMouseDown()
     {
-        if(SorF == 7)
+        if(which_cake == 7)
         {
-            cA.SetActive(true);
+            cake_freshcream.SetActive(true);
         }
-        else if(SorF == 17)
+        else if(which_cake == 17)
         {
-            cB.SetActive(true);
+            cake_chocolate.SetActive(true);
         }
         else
         {
-            cF.SetActive(true);
+            cake_failed.SetActive(true);
         }
 
-        if (CorP == 3 && (SorF == 7 || SorF == 17))
+        if (whichi_decoration == 3 && (which_cake == 7 || which_cake == 17))
         {
-            wA.SetActive(true);
-            wB.SetActive(true);
+            banana.SetActive(true);
+            strawberry.SetActive(true);
             P.SetActive(true);
         }
-        else if (CorP == 1 && (SorF == 7 || SorF == 17))
+        else if (whichi_decoration == 1 && (which_cake == 7 || which_cake == 17))
         {
-            wA.SetActive(true);
+            banana.SetActive(true);
             P.SetActive(true);
         }
 
-        else if(CorP == 2 && (SorF == 7 || SorF == 17))
+        else if(whichi_decoration == 2 && (which_cake == 7 || which_cake == 17))
         {
-            wB.SetActive(true);
+            strawberry.SetActive(true);
             C.SetActive(true);
         }
         else
